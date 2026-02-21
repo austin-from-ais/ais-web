@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  {{ content }}
+  <script>
+    (function() {
+      const videos = document.querySelectorAll('.banner-video');
+      if (videos.length < 2) return;
+      var durations = [8000, 6800]; // ms per video
+      var current = 0;
+      videos.forEach(function(v, i) {
+        if (i !== 0) v.pause();
+      });
+      function next() {
+        videos[current].classList.remove('banner-video--active');
+        current = (current + 1) % videos.length;
+        videos[current].currentTime = 0;
+        videos[current].play();
+        videos[current].classList.add('banner-video--active');
+        var prev = (current - 1 + videos.length) % videos.length;
+        setTimeout(function() { videos[prev].pause(); }, 2000);
+        setTimeout(next, durations[current]);
+      }
+      setTimeout(next, durations[0]);
+    })();
+  </script>
+</body>
+</html>
