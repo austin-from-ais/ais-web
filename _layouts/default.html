@@ -13,7 +13,7 @@
     (function() {
       const videos = document.querySelectorAll('.banner-video');
       if (videos.length < 2) return;
-      var durations = [8000, 6800]; // ms per video
+      var durations = [8000, 6800, 3500]; // ms per video
       var current = 0;
       videos.forEach(function(v, i) {
         if (i !== 0) v.pause();
@@ -25,7 +25,7 @@
         videos[current].play();
         videos[current].classList.add('banner-video--active');
         var prev = (current - 1 + videos.length) % videos.length;
-        setTimeout(function() { videos[prev].pause(); }, 2000);
+        setTimeout(function() { videos[prev].pause(); }, 1000);
         setTimeout(next, durations[current]);
       }
       setTimeout(next, durations[0]);
