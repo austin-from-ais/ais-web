@@ -85,8 +85,16 @@ permalink: /projects/
   </div>
 
   <div class="project-card">
-    <div class="project-card__media">
-      <img src="{{ '/assets/images/moodmentor-thumb.jpg' | relative_url }}" alt="MoodMentor Suite">
+    <div class="project-card__media project-card__media--carousel">
+      <iframe class="active" src="https://www.youtube.com/embed/iE2RLEMOzQQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/KS7I2tDd1HE" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/wMFC3ICIM8s" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/sQRznogjMsY" allowfullscreen></iframe>
+      <div class="carousel-controls">
+        <button class="carousel-btn carousel-prev">&larr;</button>
+        <span class="carousel-counter">1 / 4</span>
+        <button class="carousel-btn carousel-next">&rarr;</button>
+      </div>
     </div>
     <div class="project-card__body">
       <div class="project-card__info">
@@ -100,23 +108,6 @@ permalink: /projects/
       </p>
     </div>
   </div>
-
-  <div class="project-card">
-    <div class="project-card__media">
-      <img src="{{ '/assets/images/fortdesoto-thumb.jpg' | relative_url }}" alt="Fort De Soto AR Reconstructions">
-    </div>
-    <div class="project-card__body">
-      <div class="project-card__info">
-        <h2 class="project-card__title">Fort De Soto AR Reconstructions</h2>
-        <span class="project-card__year">2024</span>
-      </div>
-      <p class="project-card__desc">
-        Location-based AR application reconstructing historically significant
-        structures at Fort De Soto Park from original architectural blueprints,
-        with an AI-powered virtual tour guide.
-      </p>
-    </div>
-  </div>
 </section>
 
 <section class="about-section about-section--last">
@@ -125,3 +116,21 @@ permalink: /projects/
     <a href="{{ '/contact/' | relative_url }}" class="services-cta">Contact &rarr;</a>
   </div>
 </section>
+
+<script>
+(function() {
+  document.querySelectorAll('.project-card__media--carousel').forEach(function(carousel) {
+    var slides = carousel.querySelectorAll('iframe');
+    var counter = carousel.querySelector('.carousel-counter');
+    var current = 0;
+    function show(i) {
+      slides[current].classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      counter.textContent = (current + 1) + ' / ' + slides.length;
+    }
+    carousel.querySelector('.carousel-prev').addEventListener('click', function() { show(current - 1); });
+    carousel.querySelector('.carousel-next').addEventListener('click', function() { show(current + 1); });
+  });
+})();
+</script>
