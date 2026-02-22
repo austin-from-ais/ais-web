@@ -1,0 +1,138 @@
+---
+layout: default
+title: "MoodMentor Suite"
+permalink: /projects/moodmentor/
+---
+
+<nav class="nav">
+  <div class="nav__logo">
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/AISlogo.png' | relative_url }}" alt="AIS">
+    </a>
+  </div>
+  <div class="nav__right">
+    <ul class="nav__links">
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}" class="nav__link--active">Projects</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<a href="{{ '/projects/' | relative_url }}" class="project-back">&larr; Projects</a>
+
+<section class="about-hero">
+  <h1 class="about-hero__heading">
+    MoodMentor Suite
+  </h1>
+</section>
+
+<section class="project-detail__media project-detail__media--carousel">
+  <iframe class="active" src="https://www.youtube.com/embed/iE2RLEMOzQQ" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/KS7I2tDd1HE" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/wMFC3ICIM8s" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/sQRznogjMsY" allowfullscreen></iframe>
+  <div class="carousel-controls carousel-controls--detail">
+    <button class="carousel-btn carousel-prev">&larr;</button>
+    <span class="carousel-counter">1 / 4</span>
+    <button class="carousel-btn carousel-next">&rarr;</button>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-section__label">Overview</div>
+  <div class="about-section__content">
+    <p class="about-section__bio">
+      MoodMentor is a VR application designed to improve mindfulness skills in
+      neurodivergent adults, particularly those with Autism Spectrum Disorders,
+      intellectual and developmental disabilities, and Acquired Brain Injuries.
+      The project was developed in collaboration with Road to Responsibility, a
+      Massachusetts nonprofit, alongside South Shore Support Services, WORK, Inc.,
+      and the Arc of Bristol County.
+    </p>
+    <p class="about-section__bio">
+      Funded by the Massachusetts Department of Developmental Services, MoodMentor
+      was deployed across four Massachusetts health networks. Beta testing showed
+      participants who had difficulty sustaining attention for more than a minute or
+      two were able to focus for up to 10 minutes. The overwhelming majority responded
+      positively, and an unexpected side effect was observed: members were visibly
+      more relaxed after using the VR than they had been beforehand.
+    </p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-section__label">Approach</div>
+  <div class="about-section__content">
+    <p class="about-section__bio">
+      Clinically, mindfulness has been strongly linked to improved emotional and
+      behavioral regulation and decision making. It involves observing details in
+      natural and interpersonal environments, accurately describing what is being
+      observed, and then taking effective action. The clinical team at Road to
+      Responsibility provided guidance, and the technical team translated it into
+      an immersive VR experience.
+    </p>
+    <p class="about-section__bio">
+      Persons with ASD tend to struggle reading social cues and experience higher
+      levels of stress and anxiety when interacting with others. Traditional clinical
+      approaches can be helpful, but skill acquisition occurs in high-stakes real-life
+      situations. VR offered a way to practice in a safe, controlled environment.
+    </p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-section__label">Highlights</div>
+  <div class="about-section__content">
+    <ul class="about-list">
+      <li>Funded by the Massachusetts Department of Developmental Services</li>
+      <li>Deployed across four Massachusetts health networks serving persons with IDD, ASD, and ABI</li>
+      <li>Participants sustained focus for up to 10 minutes, from a baseline of 1&ndash;2 minutes</li>
+      <li>Design research published at IEEE GEM 2024 at Politecnico di Torino</li>
+      <li>Featured in South Shore Magazine</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-section__label">Technical</div>
+  <div class="about-section__content">
+    <p class="about-section__bio">
+      Built in Unity with C# for Meta Quest. UI/UX design informed by clinical
+      collaboration with Road to Responsibility and partner organizations.
+    </p>
+  </div>
+</section>
+
+<section class="about-section about-section--last">
+  <div class="about-section__label">Partners</div>
+  <div class="about-section__content">
+    <ul class="about-list">
+      <li>Road to Responsibility</li>
+      <li>South Shore Support Services</li>
+      <li>WORK, Inc.</li>
+      <li>Arc of Bristol County</li>
+      <li>Massachusetts Department of Developmental Services</li>
+      <li>University of Florida Advanced Technologies Learning Lab</li>
+    </ul>
+  </div>
+</section>
+
+<script>
+(function() {
+  var carousel = document.querySelector('.project-detail__media--carousel');
+  if (!carousel) return;
+  var slides = carousel.querySelectorAll('iframe');
+  var counter = carousel.querySelector('.carousel-counter');
+  var current = 0;
+  function show(i) {
+    slides[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+  }
+  carousel.querySelector('.carousel-prev').addEventListener('click', function() { show(current - 1); });
+  carousel.querySelector('.carousel-next').addEventListener('click', function() { show(current + 1); });
+})();
+</script>

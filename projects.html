@@ -27,9 +27,9 @@ permalink: /projects/
 </section>
 
 <section class="projects-featured">
-  <div class="project-card project-card--featured">
+  <a href="{{ '/projects/vpa/' | relative_url }}" class="project-card project-card--featured project-card--link">
     <div class="project-card__media">
-      <video muted autoplay loop playsinline>
+      <video muted loop playsinline preload="metadata">
         <source src="{{ '/assets/videos/vpa.mp4' | relative_url }}" type="video/mp4">
       </video>
     </div>
@@ -43,13 +43,13 @@ permalink: /projects/
         education. Published at CHI, CSCW, and in Computers and Education: AI.
       </p>
     </div>
-  </div>
+  </a>
 </section>
 
 <section class="projects-grid">
-  <div class="project-card">
+  <a href="{{ '/projects/paths/' | relative_url }}" class="project-card project-card--link">
     <div class="project-card__media">
-      <video muted autoplay loop playsinline>
+      <video muted loop playsinline preload="metadata">
         <source src="{{ '/assets/videos/paths.mp4' | relative_url }}" type="video/mp4">
       </video>
     </div>
@@ -64,11 +64,11 @@ permalink: /projects/
         and GlobalFoundries.
       </p>
     </div>
-  </div>
+  </a>
 
-  <div class="project-card">
+  <a href="{{ '/projects/bartow/' | relative_url }}" class="project-card project-card--link">
     <div class="project-card__media">
-      <video muted autoplay loop playsinline>
+      <video muted loop playsinline preload="metadata">
         <source src="{{ '/assets/videos/bartow.mp4' | relative_url }}" type="video/mp4">
       </video>
     </div>
@@ -82,21 +82,21 @@ permalink: /projects/
         onto public murals with map-based navigation and local business integration.
       </p>
     </div>
-  </div>
+  </a>
 
   <div class="project-card">
     <div class="project-card__media project-card__media--carousel">
-      <iframe class="active" src="https://www.youtube.com/embed/iE2RLEMOzQQ" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/KS7I2tDd1HE" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/wMFC3ICIM8s" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/sQRznogjMsY" allowfullscreen></iframe>
+      <iframe class="active" src="https://www.youtube.com/embed/iE2RLEMOzQQ" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/KS7I2tDd1HE" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/wMFC3ICIM8s" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/sQRznogjMsY" allowfullscreen loading="lazy"></iframe>
       <div class="carousel-controls">
         <button class="carousel-btn carousel-prev">&larr;</button>
         <span class="carousel-counter">1 / 4</span>
         <button class="carousel-btn carousel-next">&rarr;</button>
       </div>
     </div>
-    <div class="project-card__body">
+    <a href="{{ '/projects/moodmentor/' | relative_url }}" class="project-card__body project-card__body--link">
       <div class="project-card__info">
         <h2 class="project-card__title">MoodMentor Suite</h2>
         <span class="project-card__year">2024</span>
@@ -106,7 +106,7 @@ permalink: /projects/
         Massachusetts health networks. Participants sustained focus for up to 10
         minutes from a baseline of 1&ndash;2.
       </p>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -119,6 +119,22 @@ permalink: /projects/
 
 <script>
 (function() {
+  // Hover to play/pause videos
+  document.querySelectorAll('.project-card__media video').forEach(function(video) {
+    var card = video.closest('.project-card');
+    // Skip past white intro frames
+    if (video.querySelector('source[src*="paths"]')) {
+      video.addEventListener('loadedmetadata', function() { video.currentTime = 2; });
+    }
+    card.addEventListener('mouseenter', function() {
+      video.play();
+    });
+    card.addEventListener('mouseleave', function() {
+      video.pause();
+    });
+  });
+
+  // Carousel
   document.querySelectorAll('.project-card__media--carousel').forEach(function(carousel) {
     var slides = carousel.querySelectorAll('iframe');
     var counter = carousel.querySelector('.carousel-counter');
