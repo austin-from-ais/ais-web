@@ -596,7 +596,7 @@ a {
     background: #fff;
     z-index: 999;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 72px 2rem 2rem;
   }
 
