@@ -36,6 +36,14 @@ a {
 }
 
 /* ── Navigation ── */
+.hamburger {
+  display: none;
+}
+
+.mobile-top-fade {
+  display: none;
+}
+
 .nav {
   display: grid;
   grid-template-columns: var(--split) 1fr;
@@ -516,22 +524,132 @@ a {
     --gutter: 1.25rem;
   }
 
-  .nav {
+  /* ── Mobile top fade ── */
+  .mobile-top-fade {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, #fff 65%, transparent);
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  /* ── Hamburger button ── */
+  .hamburger {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    left: 1.25rem;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #111;
+    transition: all 0.3s ease;
+  }
+
+  .nav--open .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav--open .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav--open .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* ── Mobile nav ── */
+  .nav {
+    display: block;
+    padding: 0;
+  }
+
+  .nav__logo {
+    position: fixed;
+    top: 22px;
+    right: 1.25rem;
+    z-index: 1001;
+  }
+
+  .nav__right {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 2rem 2rem;
+  }
+
+  .nav--open .nav__right {
+    display: flex;
   }
 
   .nav__links {
-    display: none;
+    flex-direction: column;
+    gap: 0;
   }
 
+  .nav__links li {
+    list-style: none;
+  }
+
+  .nav__links a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    display: inline-block;
+  }
+
+  .nav__link--active {
+    color: #000;
+  }
+
+  /* ── Content spacing for fixed hamburger ── */
   .hero {
-    padding: 3rem var(--gutter) 2rem;
+    padding: 4.5rem var(--gutter) 2rem;
   }
 
   .hero__heading {
     margin-left: 0;
     font-size: 1.75rem;
+  }
+
+  .about-hero {
+    padding: 4.5rem var(--gutter) 2rem;
+  }
+
+  .about-hero__heading {
+    margin-left: 0;
+    font-size: 1.75rem;
+  }
+
+  .project-back {
+    margin-left: 0;
+    padding-top: 4.5rem;
+  }
+
+  .project-back + .about-hero {
+    padding-top: 1rem;
   }
 
   .intro {
@@ -541,14 +659,6 @@ a {
 
   .hero-image img {
     height: 40vh;
-  }
-
-  .about-hero__heading {
-    margin-left: 0;
-  }
-
-  .project-back {
-    margin-left: 0;
   }
 
   .about-section {
@@ -569,5 +679,9 @@ a {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .contact-email a {
+    font-size: 1.1rem;
   }
 }

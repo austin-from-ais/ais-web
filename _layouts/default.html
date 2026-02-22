@@ -8,7 +8,24 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+  <div class="mobile-top-fade"></div>
   {{ content }}
+  <script>
+    // Hamburger menu
+    (function() {
+      var hamburger = document.querySelector('.hamburger');
+      var nav = document.querySelector('.nav');
+      if (!hamburger) return;
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('nav--open');
+      });
+      nav.querySelectorAll('.nav__links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          nav.classList.remove('nav--open');
+        });
+      });
+    })();
+  </script>
   <script>
     (function() {
       const videos = document.querySelectorAll('.banner-video');
