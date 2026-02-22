@@ -679,6 +679,11 @@ a {
     gap: 2rem;
   }
 
+  .body--home {
+    height: auto;
+    overflow: auto;
+  }
+
   .body--home .hero-image {
     flex: none;
     aspect-ratio: 16 / 9;
