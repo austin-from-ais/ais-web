@@ -1,0 +1,130 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<nav class="nav">
+  <div class="nav__logo">
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/AISlogo.png' | relative_url }}" alt="AIS">
+    </a>
+  </div>
+  <div class="nav__right">
+    <ul class="nav__links">
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}" class="nav__link--active">Projects</a></li>
+      <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="{{ '/' | relative_url }}#contact">Start a project</a>
+    </div>
+  </div>
+</nav>
+
+<section class="about-hero">
+  <h1 class="about-hero__heading">
+    Our work
+  </h1>
+</section>
+
+<section class="projects-featured">
+  <div class="project-card project-card--featured">
+    <div class="project-card__media">
+      <video muted autoplay loop playsinline>
+        <source src="{{ '/assets/videos/vpa.mp4' | relative_url }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__info">
+        <h2 class="project-card__title">Virtual Pedagogical Agents</h2>
+        <span class="project-card__year">2025</span>
+      </div>
+      <p class="project-card__desc">
+        $450K DoD/NSF-funded Mixed Reality and AI platform for microelectronics
+        education. Published at CHI, CSCW, and in Computers and Education: AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="projects-grid">
+  <div class="project-card">
+    <div class="project-card__media">
+      <video muted autoplay loop playsinline>
+        <source src="{{ '/assets/videos/paths.mp4' | relative_url }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__info">
+        <h2 class="project-card__title">PATHS Program</h2>
+        <span class="project-card__year">2026</span>
+      </div>
+      <p class="project-card__desc">
+        NSF-funded 8-week semiconductor training program for autistic adults,
+        combining VR training with industry mentorship from Micron, AMD, Intel,
+        and GlobalFoundries.
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-card__media">
+      <video muted autoplay loop playsinline>
+        <source src="{{ '/assets/videos/bartow.mp4' | relative_url }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__info">
+        <h2 class="project-card__title">Bartow AR Murals</h2>
+        <span class="project-card__year">2025</span>
+      </div>
+      <p class="project-card__desc">
+        $100K city collaboration&mdash;location-based AR experiences overlaid
+        onto public murals with map-based navigation and local business integration.
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-card__media">
+      <img src="{{ '/assets/images/moodmentor-thumb.jpg' | relative_url }}" alt="MoodMentor Suite">
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__info">
+        <h2 class="project-card__title">MoodMentor Suite</h2>
+        <span class="project-card__year">2024</span>
+      </div>
+      <p class="project-card__desc">
+        VR mindfulness application for neurodivergent adults deployed across four
+        Massachusetts health networks. Participants sustained focus for up to 10
+        minutes from a baseline of 1&ndash;2.
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-card__media">
+      <img src="{{ '/assets/images/fortdesoto-thumb.jpg' | relative_url }}" alt="Fort De Soto AR Reconstructions">
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__info">
+        <h2 class="project-card__title">Fort De Soto AR Reconstructions</h2>
+        <span class="project-card__year">2024</span>
+      </div>
+      <p class="project-card__desc">
+        Location-based AR application reconstructing historically significant
+        structures at Fort De Soto Park from original architectural blueprints,
+        with an AI-powered virtual tour guide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section about-section--last">
+  <div class="about-section__label"></div>
+  <div class="about-section__content">
+    <a href="{{ '/' | relative_url }}#contact" class="services-cta">Start a project &rarr;</a>
+  </div>
+</section>
