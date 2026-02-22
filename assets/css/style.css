@@ -644,7 +644,7 @@ a {
 
   /* ── Content spacing for fixed hamburger ── */
   .hero {
-    padding: 4.5rem var(--gutter) 2rem;
+    padding: 6rem var(--gutter) 2rem;
   }
 
   .hero__heading {
@@ -653,7 +653,7 @@ a {
   }
 
   .about-hero {
-    padding: 4.5rem var(--gutter) 2rem;
+    padding: 6rem var(--gutter) 2rem;
   }
 
   .about-hero__heading {
@@ -663,14 +663,14 @@ a {
 
   .project-back {
     margin-left: 0;
-    padding-top: 4.5rem;
+    padding-top: 6rem;
   }
 
   .project-back + .about-hero {
     padding-top: 1rem;
   }
 
-  .body--home .intro {
+  .body--home .intro__description {
     display: none;
   }
 
