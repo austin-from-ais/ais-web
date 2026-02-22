@@ -652,9 +652,18 @@ a {
     padding-top: 1rem;
   }
 
+  .body--home .intro {
+    display: none;
+  }
+
   .intro {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .body--home .hero-image {
+    flex: none;
+    aspect-ratio: 16 / 9;
   }
 
   .hero-image img {
