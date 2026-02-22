@@ -1,13 +1,14 @@
 ---
 layout: default
+body_class: body--home
 ---
 
 <nav class="nav">
   <div class="nav__logo"><img src="{{ '/assets/images/AISlogo.png' | relative_url }}" alt="AIS"></div>
   <div class="nav__right">
     <ul class="nav__links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
