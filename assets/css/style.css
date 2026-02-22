@@ -160,6 +160,23 @@ a {
   object-position: center 70%;
 }
 
+.banner-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: var(--gutter);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.banner-caption--active {
+  opacity: 1;
+}
+
 /* ── Active nav link ── */
 .nav__link--active {
   color: #000;

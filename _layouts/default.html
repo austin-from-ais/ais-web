@@ -29,6 +29,7 @@
   <script>
     (function() {
       const videos = document.querySelectorAll('.banner-video');
+      const captions = document.querySelectorAll('.banner-caption');
       if (videos.length < 2) return;
       var durations = [8000, 6800, 3500]; // ms per video
       var current = 0;
@@ -37,10 +38,12 @@
       });
       function next() {
         videos[current].classList.remove('banner-video--active');
+        if (captions[current]) captions[current].classList.remove('banner-caption--active');
         current = (current + 1) % videos.length;
         videos[current].currentTime = 0;
         videos[current].play();
         videos[current].classList.add('banner-video--active');
+        if (captions[current]) captions[current].classList.add('banner-caption--active');
         var prev = (current - 1 + videos.length) % videos.length;
         setTimeout(function() { videos[prev].pause(); }, 1000);
         setTimeout(next, durations[current]);
