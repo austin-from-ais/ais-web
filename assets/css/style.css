@@ -614,6 +614,7 @@ a {
     z-index: 999;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
     padding: 72px 2rem 2rem;
   }
 
