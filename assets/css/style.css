@@ -37,7 +37,7 @@ a {
 
 /* ── Navigation ── */
 .hamburger {
-  display: none;
+  display: none !important;
 }
 
 .mobile-top-fade {
@@ -556,7 +556,7 @@ a {
 
   /* ── Hamburger button ── */
   .hamburger {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
