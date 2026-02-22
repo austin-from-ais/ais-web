@@ -344,6 +344,25 @@ a {
   max-width: none;
 }
 
+/* ── Contact page ── */
+.contact-email {
+  margin-top: 1.5rem;
+}
+
+.contact-email a {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s;
+}
+
+.contact-email a:hover {
+  color: #555;
+}
+
 /* ── Services page ── */
 .services-cta {
   font-size: 1.05rem;
