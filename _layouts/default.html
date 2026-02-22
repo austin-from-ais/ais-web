@@ -27,6 +27,13 @@
     })();
   </script>
   <script>
+    // Force-play detail page videos on mobile
+    document.querySelectorAll('.project-detail__media video').forEach(function(v) {
+      var p = v.play();
+      if (p) p.catch(function() {});
+    });
+  </script>
+  <script>
     (function() {
       var videos = document.querySelectorAll('.banner-video');
       var captions = document.querySelectorAll('.banner-caption');
